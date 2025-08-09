@@ -66,17 +66,25 @@ if check_go; then
         fi
     fi
     
-    # Find where go install put the binary and copy to standard location
+    # Find where go install put the binary and copy to standard location if needed
     if [ "$INSTALL_SUCCESS" = "true" ]; then
-        # Check common locations for the air binary
-        if [ -f "$GOBIN/air" ]; then
-            cp "$GOBIN/air" /usr/local/bin/air
-        elif [ -f "$GOPATH/bin/air" ]; then
-            cp "$GOPATH/bin/air" /usr/local/bin/air
-        elif [ -f "/root/go/bin/air" ]; then
-            cp "/root/go/bin/air" /usr/local/bin/air
-        elif [ -f "$(go env GOPATH)/bin/air" 2>/dev/null ]; then
-            cp "$(go env GOPATH)/bin/air" /usr/local/bin/air
+        # Check if air is already in the target location
+        if [ -f "/usr/local/bin/air" ]; then
+            echo "Air binary already in target location: /usr/local/bin/air"
+        else
+            # Check common locations for the air binary and copy if found
+            if [ -f "$GOBIN/air" ] && [ "$GOBIN/air" != "/usr/local/bin/air" ]; then
+                cp "$GOBIN/air" /usr/local/bin/air
+            elif [ -f "$GOPATH/bin/air" ]; then
+                cp "$GOPATH/bin/air" /usr/local/bin/air
+            elif [ -f "/root/go/bin/air" ]; then
+                cp "/root/go/bin/air" /usr/local/bin/air
+            elif [ -f "$(go env GOPATH)/bin/air" 2>/dev/null ]; then
+                GOPATH_BIN="$(go env GOPATH)/bin/air"
+                if [ "$GOPATH_BIN" != "/usr/local/bin/air" ]; then
+                    cp "$GOPATH_BIN" /usr/local/bin/air
+                fi
+            fi
         fi
     fi
     
