@@ -1,0 +1,31 @@
+{
+    "air_default": {
+        "image": "mcr.microsoft.com/devcontainers/go",
+        "features": {
+            "air": {}
+        }
+    },
+    "air_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/go",
+        "features": {
+            "air": {
+                "version": "v1.49.0"
+            }
+        }
+    },
+    "air_with_go": {
+        "image": "mcr.microsoft.com/devcontainers/go",
+        "features": {
+            "air": {
+                "installGo": false
+            }
+        }
+    },
+    "air_with_go_feature": {
+        "image": "ubuntu:latest",
+        "features": {
+            "ghcr.io/devcontainers/features/go:1": {},
+            "air": {}
+        }
+    }
+}
