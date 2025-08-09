@@ -15,9 +15,8 @@ jobs:
         features:
           - air
         baseImage:
-          - debian:latest
-          - ubuntu:latest
-          - mcr.microsoft.com/devcontainers/base:ubuntu
+          - mcr.microsoft.com/devcontainers/go:1.21
+          - mcr.microsoft.com/devcontainers/go:1.20
     steps:
       - uses: actions/checkout@v4
 

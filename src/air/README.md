@@ -2,11 +2,45 @@
 
 Installs [Air](https://github.com/air-verse/air), a live reloading tool for Go development that automatically rebuilds and restarts Go applications when source files change.
 
+## Prerequisites
+
+Air requires Go to be installed. This feature will work in the following scenarios:
+
+1. **Go base images** (e.g., `mcr.microsoft.com/devcontainers/go:1.21`) - Go is already installed
+2. **Non-Go base images** - You need to install Go first using the `go` feature
+
 ## Example Usage
 
+### With Go base image
 ```json
-"features": {
-    "ghcr.io/LuMa2003/golang-air-feature/air:1": {}
+{
+    "image": "mcr.microsoft.com/devcontainers/go:1.21",
+    "features": {
+        "ghcr.io/LuMa2003/golang-air-feature/air:1": {}
+    }
+}
+```
+
+### With non-Go base image (recommended)
+```json
+{
+    "image": "ubuntu:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/go:1": {},
+        "ghcr.io/LuMa2003/golang-air-feature/air:1": {}
+    }
+}
+```
+
+### With specific Air version
+```json
+{
+    "image": "mcr.microsoft.com/devcontainers/go:1.21",
+    "features": {
+        "ghcr.io/LuMa2003/golang-air-feature/air:1": {
+            "version": "v1.49.0"
+        }
+    }
 }
 ```
 
@@ -39,4 +73,15 @@ Air can be configured using a `.air.toml` configuration file in your project roo
 
 ## Dependencies
 
-This feature depends on Go being installed. If Go is not present, it will be installed automatically when `installGo` is set to `true` (default).
+**Important**: This feature requires Go to be installed. 
+
+- If you're using a Go base image (like `mcr.microsoft.com/devcontainers/go:1.21`), Go is already available
+- If you're using a non-Go base image (like `ubuntu:latest`), you must install the Go feature first:
+  ```json
+  "features": {
+      "ghcr.io/devcontainers/features/go:1": {},
+      "ghcr.io/LuMa2003/golang-air-feature/air:1": {}
+  }
+  ```
+
+The `installGo` option only controls whether this feature attempts to verify Go installation, but it cannot install Go itself. Use the official `go` feature for that purpose.

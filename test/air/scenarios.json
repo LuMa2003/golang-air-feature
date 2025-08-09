@@ -20,5 +20,12 @@
                 "installGo": false
             }
         }
+    },
+    "air_with_go_feature": {
+        "image": "ubuntu:latest",
+        "features": {
+            "ghcr.io/devcontainers/features/go:1": {},
+            "air": {}
+        }
     }
 }
