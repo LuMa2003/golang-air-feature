@@ -1,12 +1,12 @@
 {
     "air_default": {
-        "image": "mcr.microsoft.com/devcontainers/go:1.23",
+        "image": "mcr.microsoft.com/devcontainers/go",
         "features": {
             "air": {}
         }
     },
     "air_specific_version": {
-        "image": "mcr.microsoft.com/devcontainers/go:1.23",
+        "image": "mcr.microsoft.com/devcontainers/go",
         "features": {
             "air": {
                 "version": "v1.49.0"
@@ -14,7 +14,7 @@
         }
     },
     "air_with_go": {
-        "image": "mcr.microsoft.com/devcontainers/go:1.23",
+        "image": "mcr.microsoft.com/devcontainers/go",
         "features": {
             "air": {
                 "installGo": false

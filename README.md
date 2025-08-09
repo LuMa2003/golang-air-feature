@@ -12,7 +12,7 @@ The Air feature installs and configures Air for automatic Go application reloadi
 
 ```jsonc
 {
-    "image": "mcr.microsoft.com/devcontainers/go:1.23",
+    "image": "mcr.microsoft.com/devcontainers/go",
     "features": {
         "ghcr.io/LuMa2003/golang-air-feature/air:1": {
             "version": "latest"

@@ -15,8 +15,7 @@ jobs:
         features:
           - air
         baseImage:
-          - mcr.microsoft.com/devcontainers/go:1.23
-          - mcr.microsoft.com/devcontainers/go:1.22
+          - mcr.microsoft.com/devcontainers/go
     steps:
       - uses: actions/checkout@v4
 

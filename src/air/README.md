@@ -6,7 +6,7 @@ Installs [Air](https://github.com/air-verse/air), a live reloading tool for Go d
 
 Air requires Go to be installed. This feature will work in the following scenarios:
 
-1. **Go base images** (e.g., `mcr.microsoft.com/devcontainers/go:1.23`) - Go is already installed
+1. **Go base images** (e.g., `mcr.microsoft.com/devcontainers/go`) - Go is already installed
 2. **Non-Go base images** - You need to install Go first using the `go` feature
 
 ## Example Usage
@@ -14,7 +14,7 @@ Air requires Go to be installed. This feature will work in the following scenari
 ### With Go base image
 ```json
 {
-    "image": "mcr.microsoft.com/devcontainers/go:1.23",
+    "image": "mcr.microsoft.com/devcontainers/go",
     "features": {
         "ghcr.io/LuMa2003/golang-air-feature/air:1": {}
     }
@@ -35,7 +35,7 @@ Air requires Go to be installed. This feature will work in the following scenari
 ### With specific Air version
 ```json
 {
-    "image": "mcr.microsoft.com/devcontainers/go:1.23",
+    "image": "mcr.microsoft.com/devcontainers/go",
     "features": {
         "ghcr.io/LuMa2003/golang-air-feature/air:1": {
             "version": "v1.49.0"
@@ -75,7 +75,7 @@ Air can be configured using a `.air.toml` configuration file in your project roo
 
 **Important**: This feature requires Go to be installed. 
 
-- If you're using a Go base image (like `mcr.microsoft.com/devcontainers/go:1.23`), Go is already available
+- If you're using a Go base image (like `mcr.microsoft.com/devcontainers/go`), Go is already available
 - If you're using a non-Go base image (like `ubuntu:latest`), you must install the Go feature first:
   ```json
   "features": {
