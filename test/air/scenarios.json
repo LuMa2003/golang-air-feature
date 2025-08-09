@@ -1,0 +1,24 @@
+{
+    "air_default": {
+        "image": "mcr.microsoft.com/devcontainers/go:1.21",
+        "features": {
+            "air": {}
+        }
+    },
+    "air_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/go:1.21",
+        "features": {
+            "air": {
+                "version": "v1.49.0"
+            }
+        }
+    },
+    "air_with_go": {
+        "image": "mcr.microsoft.com/devcontainers/go:1.21",
+        "features": {
+            "air": {
+                "installGo": false
+            }
+        }
+    }
+}

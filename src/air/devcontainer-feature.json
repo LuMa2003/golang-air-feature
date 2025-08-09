@@ -1,0 +1,18 @@
+{
+    "name": "Air - Live reload for Go apps",
+    "id": "air",
+    "version": "1.0.0",
+    "description": "Install Air, a live reloading tool for Go development that automatically rebuilds and restarts Go applications when source files change",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Version of Air to install. Use 'latest' for the most recent version."
+        },
+        "installGo": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to install Go if not already present (required for Air installation)"
+        }
+    }
+}

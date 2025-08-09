@@ -15,6 +15,7 @@ jobs:
         features:
           - color
           - hello
+          - air
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -36,6 +37,7 @@ jobs:
         features:
           - color
           - hello
+          - air
     steps:
       - uses: actions/checkout@v4
 
