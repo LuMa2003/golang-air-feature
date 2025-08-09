@@ -7,7 +7,7 @@ This demonstrates how the Air feature would be used in a real Go project.
 ```json
 {
     "name": "Go with Air",
-    "image": "mcr.microsoft.com/devcontainers/go:1.21",
+    "image": "mcr.microsoft.com/devcontainers/go:1.23",
     "features": {
         "ghcr.io/LuMa2003/golang-air-feature/air:1": {
             "version": "latest"
